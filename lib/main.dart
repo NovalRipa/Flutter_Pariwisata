@@ -2,123 +2,124 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'dart:async';
+import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'kawahputih.dart';
 import 'LembangPark.dart';
 import 'Orchid.dart';
 import 'TebingKeraton.dart';
 import 'TheGreatAsiaAfricaLembang.dart';
+import 'ListWisata.dart';
+
+// void main() {
+//   runApp(MaterialApp(
+//     title: 'Navigation Basics',
+//     home: HalamanPertama(),
+//   ));
+// }
+
+// class HalamanPertama extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text('Selamat Datang'),
+//       ),
+//       body: Container(
+//           child: Column(children: <Widget>[
+//         Padding(
+//           padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+//           child: Image.asset(
+//             'assets/images/s.png',
+//             height: 300,
+//             width: 300,
+//           ),
+//         ),
+//         Padding(
+//             padding: EdgeInsets.fromLTRB(0, 0, 0, 20),
+//             child:
+//                 Text('Tempat Wisata Bandung', style: TextStyle(fontSize: 30))),
+//         Center(
+//           child: ElevatedButton(
+//             child: Text('Lanjutkan'),
+//             onPressed: () {
+//               Navigator.push(
+//                 context,
+//                 MaterialPageRoute(builder: (context) => List()),
+//               );
+//             },
+//           ),
+//         )
+//       ])),
+//     );
+//   }
+// }
 
 void main() {
-  runApp(MaterialApp(
-    debugShowCheckedModeBanner: false,
-    title: 'Pariwisata Bandung',
-    initialRoute: '/',
-    routes: {
-      '/': (context) => kawahputih(),
-      KawahPutih.routeName: (context) => KawahPutih(),
-      LembangParkZoo.routeName: (context) => LembangParkZoo(),
-      TebingKeraton.routeName: (context) => TebingKeraton(),
-      TheGreatAsiaAfricaLembang.routeName: (context) =>
-          TheGreatAsiaAfricaLembang(),
-      Orchid.routeName: (context) => Orchid(),
-    },
-  ));
+  SystemChrome.setSystemUIOverlayStyle(
+      SystemUiOverlayStyle(statusBarColor: Colors.transparent));
+  runApp(MyApp());
 }
 
-class kawahputih extends StatelessWidget {
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Wisata Bandung',
+      theme: ThemeData(
+        primarySwatch: Colors.green,
+      ),
+      home: SplashScreen(),
+    );
+  }
+}
+
+class SplashScreen extends StatefulWidget {
+  @override
+  _SplashScreenState createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen> {
+  var date = DateTime.now();
+  @override
+  void initState() {
+    super.initState();
+    Timer(
+        Duration(seconds: 5),
+        () => Navigator.pushReplacement(
+            context, MaterialPageRoute(builder: (context) => List())));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Home'),
-        backgroundColor: Colors.pinkAccent,
-      ),
-      body: Center(
-        child: ListView(
-          children: <Widget>[
-            Container(
-              margin: EdgeInsets.only(bottom: 15.0),
-              alignment: Alignment.bottomCenter,
-              child: Container(
-                padding: EdgeInsets.all(50),
-                child: Text("Kumpulan Tempat Pariwisata di Bandung",
-                    style: TextStyle(
-                        fontSize: 20,
-                        fontStyle: FontStyle.normal,
-                        fontWeight: FontWeight.bold)),
-              ),
+      body: Container(
+        width: double.infinity,
+        height: double.infinity,
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+              begin: Alignment.topRight,
+              end: Alignment.bottomLeft,
+              colors: [Colors.white, Colors.white10]),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            Column(
+              children: [
+                Image.asset(
+                  "assets/images/s.png",
+                  height: 300.0,
+                  width: 300.0,
+                ),
+              ],
             ),
-            Image.asset(
-              'assets/images/kawah2.jpg',
-              width: 500,
-              height: 200,
-            ),
-            Padding(
-              padding: EdgeInsets.all(50),
-              child: ElevatedButton(
-                child: Text('Kawah Putih'),
-                onPressed: () {
-                  Navigator.pushNamed(context, KawahPutih.routeName);
-                },
-              ),
-            ),
-            Image.asset(
-              'assets/images/lembang.jpg',
-              width: 500,
-              height: 200,
-            ),
-            Padding(
-              padding: EdgeInsets.all(50),
-              child: ElevatedButton(
-                child: Text('Lembang Park & Zoo'),
-                onPressed: () {
-                  Navigator.pushNamed(context, LembangParkZoo.routeName);
-                },
-              ),
-            ),
-            Image.asset(
-              'assets/images/tebing.jpg',
-              width: 500,
-              height: 200,
-            ),
-            Padding(
-              padding: EdgeInsets.all(50),
-              child: ElevatedButton(
-                child: Text('Tebing Keraton'),
-                onPressed: () {
-                  Navigator.pushNamed(context, TebingKeraton.routeName);
-                },
-              ),
-            ),
-            Image.asset(
-              'assets/images/great.jpg',
-              width: 500,
-              height: 200,
-            ),
-            Padding(
-              padding: EdgeInsets.all(50),
-              child: ElevatedButton(
-                child: Text('The Great Asia Africa Lembang'),
-                onPressed: () {
-                  Navigator.pushNamed(
-                      context, TheGreatAsiaAfricaLembang.routeName);
-                },
-              ),
-            ),
-            Image.asset(
-              'assets/images/orchid.jpg',
-              width: 500,
-              height: 200,
-            ),
-            Padding(
-              padding: EdgeInsets.all(50),
-              child: ElevatedButton(
-                child: Text('Orchid Forest Cikole'),
-                onPressed: () {
-                  Navigator.pushNamed(context, Orchid.routeName);
-                },
-              ),
+            CircularProgressIndicator(
+              valueColor: AlwaysStoppedAnimation<Color>(Colors.grey),
             ),
           ],
         ),

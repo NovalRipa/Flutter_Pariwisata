@@ -28,7 +28,7 @@ class Orchid extends StatelessWidget {
                 Container(
                   margin: EdgeInsets.all(10),
                   height: 200,
-                  width: 410,
+                  width: 500,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                   ),

@@ -8,7 +8,7 @@ class KawahPutih extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Lembang Park & Zoom"),
+        title: Text("Kawah Putih"),
       ),
       body: ListView(
         children: <Widget>[
