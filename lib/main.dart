@@ -6,6 +6,8 @@ import 'dart:async';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:pariwisata_bandung/main_screen.dart';
+import 'package:pariwisata_bandung/home_screen.dart';
 import 'kawahputih.dart';
 import 'LembangPark.dart';
 import 'Orchid.dart';
@@ -72,6 +74,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
+      darkTheme: ThemeData.dark(),
       home: SplashScreen(),
     );
   }
@@ -90,7 +93,7 @@ class _SplashScreenState extends State<SplashScreen> {
     Timer(
         Duration(seconds: 5),
         () => Navigator.pushReplacement(
-            context, MaterialPageRoute(builder: (context) => List())));
+            context, MaterialPageRoute(builder: (context) => MainScreen())));
   }
 
   @override
