@@ -15,49 +15,6 @@ import 'TebingKeraton.dart';
 import 'TheGreatAsiaAfricaLembang.dart';
 import 'ListWisata.dart';
 
-// void main() {
-//   runApp(MaterialApp(
-//     title: 'Navigation Basics',
-//     home: HalamanPertama(),
-//   ));
-// }
-
-// class HalamanPertama extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(
-//         title: Text('Selamat Datang'),
-//       ),
-//       body: Container(
-//           child: Column(children: <Widget>[
-//         Padding(
-//           padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
-//           child: Image.asset(
-//             'assets/images/s.png',
-//             height: 300,
-//             width: 300,
-//           ),
-//         ),
-//         Padding(
-//             padding: EdgeInsets.fromLTRB(0, 0, 0, 20),
-//             child:
-//                 Text('Tempat Wisata Bandung', style: TextStyle(fontSize: 30))),
-//         Center(
-//           child: ElevatedButton(
-//             child: Text('Lanjutkan'),
-//             onPressed: () {
-//               Navigator.push(
-//                 context,
-//                 MaterialPageRoute(builder: (context) => List()),
-//               );
-//             },
-//           ),
-//         )
-//       ])),
-//     );
-//   }
-// }
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(
@@ -66,17 +23,35 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+  static final ValueNotifier<ThemeMode> themeNotifier =
+      ValueNotifier(ThemeMode.light);
+
+      const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Wisata Bandung',
-      theme: ThemeData(
-        primarySwatch: Colors.green,
-      ),
-      darkTheme: ThemeData.dark(),
-      home: SplashScreen(),
-    );
+    // return MaterialApp(
+    //   debugShowCheckedModeBanner: false,
+    //   title: 'Wisata Bandung',
+    //   theme: ThemeData(
+    //     primarySwatch: Colors.green,
+    //   ),
+    //   darkTheme: ThemeData.dark(),
+    //   home: SplashScreen(),
+    // );
+        return ValueListenableBuilder<ThemeMode>(
+        valueListenable: themeNotifier,
+        builder: (_, ThemeMode currentMode, __) {
+          return MaterialApp(
+            // Remove the debug banner
+            debugShowCheckedModeBanner: false,
+            title: 'Kindacode.com',
+            theme: ThemeData(primarySwatch: Colors.green),
+            darkTheme: ThemeData.dark(),
+            themeMode: currentMode,
+            home: SplashScreen(),
+          );
+        });
   }
 }
 
@@ -106,7 +81,8 @@ class _SplashScreenState extends State<SplashScreen> {
           gradient: LinearGradient(
               begin: Alignment.topRight,
               end: Alignment.bottomLeft,
-              colors: [Colors.white, Colors.white10]),
+              colors: [Colors.white, Colors.white10]
+              ),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -115,7 +91,7 @@ class _SplashScreenState extends State<SplashScreen> {
             Column(
               children: [
                 Image.asset(
-                  "assets/images/s.png",
+                  "assets/images/assalam.png",
                   height: 300.0,
                   width: 300.0,
                 ),

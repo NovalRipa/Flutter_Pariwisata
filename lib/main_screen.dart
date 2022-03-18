@@ -13,7 +13,7 @@ class _MainScreenState extends State<MainScreen> {
   int _selectedIndex = 0;
 
   List<Widget> _widgetOptions = <Widget>[
-    HomeScreen(),
+    home(),
     MenuScreen1(),
     ProfileScreen(),
   ];
@@ -24,7 +24,7 @@ class _MainScreenState extends State<MainScreen> {
         currentIndex: _selectedIndex,
         showSelectedLabels: false,
         showUnselectedLabels: false,
-        selectedItemColor: Colors.green,
+        selectedItemColor: Colors.pinkAccent,
         unselectedItemColor: Colors.grey,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(

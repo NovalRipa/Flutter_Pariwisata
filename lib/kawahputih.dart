@@ -41,7 +41,7 @@ class KawahPutih extends StatelessWidget {
                   margin: EdgeInsets.all(10),
                   padding: EdgeInsets.all(10),
                   decoration: BoxDecoration(
-                    border: Border.all(color: Colors.black),
+                    border: Border.all(color: Colors.white),
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: Container(
@@ -59,7 +59,7 @@ Alamat     : Sugihmukti, Kec. Pasirjambu, Bandung, Jawa Barat
                         ''',
                       textAlign: TextAlign.justify,
                       style: TextStyle(
-                          color: Colors.black,
+                          color: Colors.white,
                           fontWeight: FontWeight.bold,
                           fontStyle: FontStyle.italic),
                     ),

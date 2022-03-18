@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pariwisata_bandung/main.dart';
 import 'package:pariwisata_bandung/TebingKeraton.dart';
 import 'package:pariwisata_bandung/Trans.dart';
 import 'package:pariwisata_bandung/kawahputih.dart';
@@ -13,7 +14,19 @@ class List extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("List Wisata"),
+        title: const Text('List Wisata'),
+        actions: [
+          IconButton(
+              icon: Icon(MyApp.themeNotifier.value == ThemeMode.light
+                  ? Icons.dark_mode
+                  : Icons.light_mode),
+              onPressed: () {
+                MyApp.themeNotifier.value =
+                    MyApp.themeNotifier.value == ThemeMode.light
+                        ? ThemeMode.dark
+                        : ThemeMode.light;
+              })
+        ],
       ),
       body: Center(
         child: ListView(
