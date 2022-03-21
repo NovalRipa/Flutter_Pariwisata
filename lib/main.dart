@@ -6,6 +6,7 @@ import 'dart:async';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:pariwisata_bandung/demo.dart';
 import 'package:pariwisata_bandung/main_screen.dart';
 import 'package:pariwisata_bandung/home_screen.dart';
 import 'kawahputih.dart';
@@ -14,7 +15,8 @@ import 'Orchid.dart';
 import 'TebingKeraton.dart';
 import 'TheGreatAsiaAfricaLembang.dart';
 import 'ListWisata.dart';
-
+import 'package:pariwisata_bandung/home_screen.dart';
+import 'navdrawer.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(
@@ -30,15 +32,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // return MaterialApp(
-    //   debugShowCheckedModeBanner: false,
-    //   title: 'Wisata Bandung',
-    //   theme: ThemeData(
-    //     primarySwatch: Colors.green,
-    //   ),
-    //   darkTheme: ThemeData.dark(),
-    //   home: SplashScreen(),
-    // );
         return ValueListenableBuilder<ThemeMode>(
         valueListenable: themeNotifier,
         builder: (_, ThemeMode currentMode, __) {
@@ -66,7 +59,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     Timer(
-        Duration(seconds: 5),
+        Duration(seconds: 2),
         () => Navigator.pushReplacement(
             context, MaterialPageRoute(builder: (context) => MainScreen())));
   }
@@ -74,6 +67,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: NavBar(),
       body: Container(
         width: double.infinity,
         height: double.infinity,

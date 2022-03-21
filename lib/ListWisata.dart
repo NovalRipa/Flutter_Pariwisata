@@ -7,8 +7,8 @@ import 'package:pariwisata_bandung/LembangPark.dart';
 import 'package:pariwisata_bandung/Orchid.dart';
 import 'package:pariwisata_bandung/TheGreatAsiaAfricaLembang.dart';
 
-class List extends StatelessWidget {
-  const List({Key? key}) : super(key: key);
+class ListWisata extends StatelessWidget {
+  const ListWisata({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -27,6 +27,7 @@ class List extends StatelessWidget {
                         : ThemeMode.light;
               })
         ],
+        
       ),
       body: Center(
         child: ListView(

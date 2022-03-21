@@ -69,7 +69,7 @@ class ProfileScreen extends StatelessWidget {
                 '   Saya lulusan SD,SMP dan sekarang saya sedang menjalani mendidikan di SMK Assalaam Bandung '),
           ),
           SizedBox(
-            height: 40,
+            height: 90,
           ),
           ListTile(
             title: Text('Social'),

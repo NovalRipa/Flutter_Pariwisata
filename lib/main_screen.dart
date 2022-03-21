@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'home_screen.dart';
 import 'profile_screen.dart';
 import 'menu1_screen.dart';
+import 'navdrawer.dart';
 
 
 class MainScreen extends StatefulWidget {
@@ -15,7 +16,6 @@ class _MainScreenState extends State<MainScreen> {
   List<Widget> _widgetOptions = <Widget>[
     home(),
     MenuScreen1(),
-    ProfileScreen(),
   ];
   @override
   Widget build(BuildContext context) {
@@ -34,10 +34,6 @@ class _MainScreenState extends State<MainScreen> {
           BottomNavigationBarItem(
             icon: Icon(Icons.assignment),
             label: 'Menu 1',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Profile',
           ),
         ],
         onTap: (index) => setState(() {

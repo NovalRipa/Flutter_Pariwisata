@@ -5,11 +5,13 @@ import 'package:pariwisata_bandung/main_screen.dart';
 import 'package:pariwisata_bandung/menu1_screen.dart';
 import 'package:pariwisata_bandung/menu2_screen.dart';
 import 'package:pariwisata_bandung/profile_screen.dart';
+import 'navdrawer.dart';
 
 class home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+            drawer: NavBar(),
             appBar: AppBar(
         title: const Text('Dashboard'),
         actions: [
@@ -53,7 +55,7 @@ class home extends StatelessWidget {
                     onPressed: () => {
                     Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => List()),
+                    MaterialPageRoute(builder: (context) => ListWisata()),
                     )
                     },
                     splashColor: Colors.redAccent,
