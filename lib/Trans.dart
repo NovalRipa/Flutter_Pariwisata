@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pariwisata_bandung/main.dart';
 
 class TransStudio extends StatelessWidget {
   // const TransStudio ({Key? key}) : super(key: key);
@@ -9,6 +10,18 @@ class TransStudio extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("Trans Studio Bandung"),
+                        actions: [
+          IconButton(
+              icon: Icon(MyApp.themeNotifier.value == ThemeMode.light
+                  ? Icons.dark_mode
+                  : Icons.light_mode),
+              onPressed: () {
+                MyApp.themeNotifier.value =
+                    MyApp.themeNotifier.value == ThemeMode.light
+                        ? ThemeMode.dark
+                        : ThemeMode.light;
+              })
+        ],
       ),
       body: ListView(
         children: <Widget>[
@@ -26,10 +39,12 @@ class TransStudio extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Container(
-                  margin: EdgeInsets.all(10),
+                  padding: EdgeInsets.all(5),
+                  margin: EdgeInsets.all(5),
                   height: 200,
                   width: 410,
                   decoration: BoxDecoration(
+                    border: Border.all(color: Colors.pink),
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: Image.asset(
@@ -41,7 +56,7 @@ class TransStudio extends StatelessWidget {
                   margin: EdgeInsets.all(10),
                   padding: EdgeInsets.all(10),
                   decoration: BoxDecoration(
-                    border: Border.all(color: Colors.white),
+                    border: Border.all(color: Colors.pink),
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: Container(
@@ -67,7 +82,7 @@ Cibangkong, Bandung, Jawa Barat, Indonesia
                         ''',
                       textAlign: TextAlign.justify,
                       style: TextStyle(
-                          color: Colors.white,
+                          color: Colors.blueAccent,
                           fontWeight: FontWeight.bold,
                           fontStyle: FontStyle.italic),
                     ),

@@ -27,13 +27,8 @@ class NavBar extends StatelessWidget {
               color: Colors.blue,
               image: DecorationImage(
                   fit: BoxFit.fill,
-                  image: AssetImage('assets/images/smkAs.jpg')),
+                  image: AssetImage('assets/images/kawah.jpg')),
             ),
-          ),
-          ListTile(
-            leading: Icon(Icons.favorite),
-            title: Text('Favorites'),
-            onTap: () => null,
           ),
           Divider(),
           ListTile(
@@ -57,6 +52,7 @@ class NavBar extends StatelessWidget {
                     )
                     },
           ),
+          
         ],
       ),
     );

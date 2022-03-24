@@ -67,32 +67,11 @@ class home extends StatelessWidget {
                     minWidth: 150.0,
                     color: Theme.of(context).primaryColor,
                     textColor: Colors.white,
-                    child: new Text("Profile"),
+                    child: new Text("Exit"),
                     onPressed: () => {
                     Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) =>  ProfileScreen()),
-                    )
-                    },
-                    splashColor: Colors.redAccent,
-                  )),
-            ],
-          ),
-         Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Padding(
-                  padding: EdgeInsets.all(20.0),
-                  child: new MaterialButton(
-                    height: 100.0,
-                    minWidth: 150.0,
-                    color: Theme.of(context).primaryColor,
-                    textColor: Colors.white,
-                    child: new Text("Main"),
-                    onPressed: () => {
-                    Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => MyApp()),
+                    MaterialPageRoute(builder: (context) =>  MyApp()),
                     )
                     },
                     splashColor: Colors.redAccent,

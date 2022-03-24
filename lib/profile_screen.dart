@@ -52,8 +52,8 @@ class ProfileScreen extends StatelessWidget {
             height: 40,
           ),
           ListTile(
-            title: Center(child: Text('Ripa Noval kh')),
-            subtitle: Center(child: Text('Murid SMK Assalaam Bandung Jurusan RPL')),
+            title: Center(child: Text('Ripa Noval Kh')),
+            subtitle: Center(child: Text('SMK ASSALAAM BANDUNG')),
           ),
           ListTile(
             title: Text('Tentang Saya '),
